@@ -1,0 +1,20 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  display: grid;
+  grid-template-rows: 200px 1fr;
+}
+
+main {
+  display: grid;
+  grid-template-rows: 70vh 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  
+  & > div {
+    padding-bottom: 500px;
+  }
+}
