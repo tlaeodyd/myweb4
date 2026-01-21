@@ -33,7 +33,14 @@ main {
   width: 100%;
   /* height: 10px; */
   border-bottom: 2px solid black;
+
+  & h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
+
 
 .todoList {
   background-color: rgb(231, 147, 147);
