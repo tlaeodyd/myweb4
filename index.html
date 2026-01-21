@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,23 +10,62 @@
 </head>
 <!-- 
   상중하로 나뉘어 
-  상급인 데이터들은 개중요에 들어간다
+  상급인 데이터들은 상에 들어간다
   중은 중요
-  하는 하지말까에 들어가고
+  하는 하에 들어가고
   모두 페이지에 보이게 하고 
   중요도에 따른 css 차이
   제목을 누르면 modal로 가운데 보이게 된다
    -->
+
 <body>
-  <header>입력창</header>
+  <header>
+    <h1>중요도별 할 일 추가</h1>
+    <div>
+      <input type="text" name="title" placeholder="제목을 입력">
+      <input type="text" name="content" placeholder="내용을 입력">
+      <div>
+        <input type="radio">
+        <span>상</span>
+        <input type="radio">
+        <span>중</span>
+        <input type="radio">
+        <span>하</span>
+      </div>
+    </div>
+    <button id="addtodo" onclick="createTodoBtn();">+ 할 일 추가</button>
+  </header>
+
   <main>
-    <div>상</div>
-    <div>중</div>
-    <div>하</div>
+    <div id="todoHigh" class="todoArea">
+      <h2>상</h2>
+      <table id="voListTable">
+        <tbody></tbody>
+      </table>
+      <div id="listHigh" class="todoList"></div>
+    </div>
+    <div id="todoMidle" class="todoArea">
+      <h2>중</h2>
+      <div id="listMidle" class="todoList"></div>
+    </div>
+    <div id="todoLow" class="todoArea">
+      <h2>하</h2>
+      <div id="listLow" class="todoList"></div>
+    </div>
   </main>
 
-  
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()"></span>
+      <h2 id="modalTitle"></h2>
+      <hr>
+      <p id="modalContent"></p>
+    </div>
+  </div>
+
+
 
 
 </body>
+
 </html>
