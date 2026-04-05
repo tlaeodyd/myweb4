@@ -16,6 +16,7 @@ function Nav() {
     <Wrapper>
       <NavItem url={'/insert'}>방명록 등록</NavItem>
       <NavItem url={'/list'}>방명록 목록</NavItem>
+      <NavItem url={'/lotto'}>로또 생성기</NavItem>
     </Wrapper>
   );
 }

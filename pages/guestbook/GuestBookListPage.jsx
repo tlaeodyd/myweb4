@@ -1,4 +1,3 @@
-// src/pages/guestbook/GuestBookListPage.jsx
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useGuestbook } from '../../hooks/useGuestbook';
@@ -29,6 +28,19 @@ const StyledTable = styled.table`
   th {
     background-color: #eee;
   }
+
+  col:nth-child(1) {
+    width: 20%;
+  }
+  col:nth-child(2) {
+    width: 35%;
+  }
+  col:nth-child(3) {
+    width: 15%;
+  }
+  col:nth-child(4) {
+    width: 30%;
+  }
 `;
 
 function GuestBookListPage() {
@@ -46,26 +58,32 @@ function GuestBookListPage() {
 
       <StyledTable>
         <colgroup>
-          <col style={{ width: '70%' }} />
-          <col style={{ width: '30%' }} />
+          <col />
+          <col />
+          <col />
+          <col />
         </colgroup>
         <thead>
           <tr>
+            <th>넘버</th>
             <th>내용</th>
             <th>작성자</th>
+            <th>작성일</th>
           </tr>
         </thead>
         <tbody>
           {guestbookList && guestbookList.length > 0 ? (
-            guestbookList.map((vo) => (
+            guestbookList.map((vo, index) => (
               <tr key={vo.id}>
+                <td>{guestbookList.length - index}</td>
                 <td>{vo.content}</td>
                 <td>{vo.writer}</td>
+                <td>{vo.date}</td>
               </tr>
             ))
           ) : (
             <tr>
-              <td colSpan={2}> 등록된 방명록이 없습니다.</td>
+              <td colSpan={4}> 등록된 방명록이 없습니다.</td>
             </tr>
           )}
         </tbody>
